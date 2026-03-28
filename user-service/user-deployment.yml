@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
         - name: user-container
-          image: xoryush/user-service:02
+          image: xoryush/user-service:latest  
           ports:
             - containerPort: 3001

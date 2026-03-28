@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: order-container
-          image: xoryush/order-service:02
+          image: xoryush/order-service:latest
           ports:
             - containerPort: 3003

@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
         - name: product-container
-          image: xoryush/product-service:02
+          image: xoryush/product-service:latest
           ports:
             - containerPort: 3002
