@@ -1,0 +1,37 @@
+name: Build and Push All Services
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Login to Docker Hub
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+      # 🔹 Build Images
+      - name: Build User Service
+        run: docker build -t xoryush/user-service:latest ./user-service
+
+      - name: Build Product Service
+        run: docker build -t xoryush/product-service:latest ./product-service
+
+      - name: Build Order Service
+        run: docker build -t xoryush/order-service:latest ./order-service
+
+      # 🔹 Push Images
+      - name: Push User Service
+        run: docker push xoryush/user-service:latest
+
+      - name: Push Product Service
+        run: docker push xoryush/product-service:latest
+
+      - name: Push Order Service
+        run: docker push xoryush/order-service:latest
