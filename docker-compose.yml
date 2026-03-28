@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+
+  user-service:
+    build: ./user-service
+    container_name: user-container
+    ports:
+      - "4001:3001"
+
+  product-service:
+    build: ./product-service
+    container_name: product-container
+    ports:
+      - "4002:3002"
+
+  order-service:
+    build: ./order-service
+    container_name: order-container
+    ports:
+      - "4003:3003"
+    depends_on:
+      - product-service
