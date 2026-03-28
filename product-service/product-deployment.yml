@@ -19,5 +19,6 @@ spec:
       containers:
         - name: product-container
           image: xoryush/product-service:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 3002

@@ -19,5 +19,6 @@ spec:
       containers:
         - name: user-container
           image: xoryush/user-service:latest  
+          imagePullPolicy: Always
           ports:
             - containerPort: 3001
