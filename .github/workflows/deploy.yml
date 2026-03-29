@@ -35,3 +35,6 @@ jobs:
 
       - name: Push Order Service
         run: docker push xoryush/order-service:latest
+
+      - name: Deployment Reminder
+        run: echo "Run kubectl rollout restart deployment --all locally"
